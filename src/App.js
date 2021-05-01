@@ -10,14 +10,14 @@ class App extends React.Component {
   }
 
   render() {
+    let isLoggedIn = this.state.isLoggedIn;
     return (
       <div className='App'>
         <h1>
           This is demo for serveral ways implementing conditional rendering in
           React
         </h1>
-        <button>Login</button>
-        <button>Logout</button>
+        {isLoggedIn ? <button>Logout</button> : <button>Login</button>}
       </div>
     );
   }
