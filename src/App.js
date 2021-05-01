@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import AuthButton from './components/auth.button.component';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,21 +13,13 @@ class App extends React.Component {
   render() {
     let isLoggedIn = this.state.isLoggedIn;
 
-    const renderAuthButton = () => {
-      if (isLoggedIn) {
-        return 'Logout';
-      } else {
-        return 'Login';
-      }
-    };
-
     return (
       <div className='App'>
         <h1>
           This is demo for serveral ways implementing conditional rendering in
           React
         </h1>
-        <button>{renderAuthButton()}</button>
+        <AuthButton isLoggedIn={isLoggedIn} />
       </div>
     );
   }
